@@ -1,17 +1,13 @@
 package com.example.mysample
 
-import android.Manifest
 import android.bluetooth.BluetoothAdapter
 import android.content.Context
-import android.content.Intent
-import android.content.pm.PackageManager
 import android.hardware.camera2.CameraManager
+import android.view.WindowManager.LayoutParams
+import android.widget.Toast
 import io.flutter.embedding.android.FlutterActivity
 import io.flutter.embedding.engine.FlutterEngine
 import io.flutter.plugin.common.MethodChannel
-import android.view.WindowManager.LayoutParams
-import android.widget.Toast
-import androidx.core.app.ActivityCompat
 
 class MainActivity : FlutterActivity() {
     private val CHANNEL = "samples.flutter.dev/counter"
@@ -66,22 +62,24 @@ class MainActivity : FlutterActivity() {
 
                 "turnOnTorch" -> {
                     try {
-                        result.success(cameraManager.setTorchMode(cameraId,true))
+                        result.success(cameraManager.setTorchMode(cameraId, true))
                     } catch (e: Exception) {
                         result.notImplemented()
                     }
                 }
-                "turnOffTorch"->{
+
+                "turnOffTorch" -> {
                     try {
-                        result.success(cameraManager.setTorchMode(cameraId,false))
+                        result.success(cameraManager.setTorchMode(cameraId, false))
                     } catch (e: Exception) {
                         result.notImplemented()
                     }
                 }
-                "showToast"->{
+
+                "showToast" -> {
                     try {
-                        val m =call.argument<String>("msg")
-                        val dur =call.argument<Int>("dur")
+                        val m = call.argument<String>("msg")
+                        val dur = call.argument<Int>("dur")
                         val toast = dur?.let { Toast.makeText(this, m, it) }
                         if (toast != null) {
                             result.success(toast.show())
@@ -90,6 +88,7 @@ class MainActivity : FlutterActivity() {
                         result.notImplemented()
                     }
                 }
+
             }
 
         }

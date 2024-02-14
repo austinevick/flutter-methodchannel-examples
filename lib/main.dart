@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
@@ -25,8 +27,10 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
   final platform = const MethodChannel("samples.flutter.dev/counter");
+
   bool isEnabled = true;
   int counter = 0;
+
   Future<void> increment() async {
     try {
       final result = await platform.invokeMethod<int>('increment');
