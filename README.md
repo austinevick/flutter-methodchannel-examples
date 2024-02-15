@@ -1,4 +1,4 @@
-# mysample
+# A Collection of Flutter methodchannels examples
 
 A new Flutter project.
 
