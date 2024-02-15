@@ -26,7 +26,7 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  final platform = const MethodChannel("samples.flutter.dev/counter");
+  final platform = const MethodChannel("com.example.mysample/methodchannel");
 
   bool isEnabled = true;
   int counter = 0;

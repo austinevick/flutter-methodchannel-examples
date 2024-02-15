@@ -10,7 +10,7 @@ import io.flutter.embedding.engine.FlutterEngine
 import io.flutter.plugin.common.MethodChannel
 
 class MainActivity : FlutterActivity() {
-    private val CHANNEL = "samples.flutter.dev/counter"
+    private val CHANNEL = "com.example.mysample/methodchannel"
     private var counter = 0
     private lateinit var bluetoothAdapter: BluetoothAdapter
     private lateinit var cameraManager: CameraManager
